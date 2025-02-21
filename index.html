@@ -2,17 +2,103 @@
 <html lang="ko">
 <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>HTML & CSS</title>
+
+
+        <link rel="stylesheet" href="./cssstyle.css">
+        <style>
+                .style-1 {
+
+                color: olivedrab;
+                }
+        </style>
+
+        <title>테이블 만들기</title>
+
+
 </head>
+
+<html>
 <body>
-        <h2>조민준 짱짱맨입니다</h2>
+        
+        <u><h1><b style="color:blue;">조민준 홈페이지</b></h1></u>
+        <hr>
+        <h2>공부 진행도</h2>
+        <progress
+        id="progressBar"
+        max="100"
+        value="7">
+        7%
+        </progress>
+        <hr>
+        <h2>Contacts</h2>
+        <address>
+                웹사이트 주소 : <a href ="https://geradelmoto.github.io">www.조민준짱짱맨.com</a> <br>
+                네이버 블로그 주소: <a href ="https://blog.naver.com/gearshifty">조민준의 블로그</a> <br>
+                오피스: 경기도 수원시 영통구 영통동 살구마을 진덕아파트 703동 1903호 <br>
+                전화 <a href=""tel:010-2071-0362">010-2071-0362</a><br>
+                이메일: <a href="jmjun03@naver.com">jmjun03@naver.com</a>
+        </address>
+        <hr>
+        이 페이지는 <mark><b>조민준</b></mark>이 전역 후 무엇을 할 것인지를 적어놓은 페이지 입니다 <br>
+        조민준이 뭐하고 사는지 궁금하신 분들은 이곳에서 읽어보셔도 될 것 같습니다. 호호 <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    -2025년 2월 20일 조민준- </p>
+        <hr>
+        <img src ="https://i.namu.wiki/i/JxtYYuLB0YZtp-o5tfmE7LJTy1G-BwWg34jt3HjqEcJZWdQZGyoGvK-KTSM3hiNh6mXwtZeMRfFksbDRbb3vG0AWXujpyT3nTDQixaeFWCaE4n-j6rs1Ta08fclH4txbSiGGQQuCOseQ-HCTL0E9dQ.svg" alt=""60사단 마크" title="전역"
+        width="300"
+        height="300"
+        >
+        <br>제가 전역한 60 보병사단 사진입니다. 그냥 가져와봤습니다.
+        <hr>
+        <h2>작업 링크</h2>
+        <ul>
+                <li>Gearshift 커뮤니티 바로가기 : <a href="https://www.roblox.com/communities/8543037/Gearshift#!/about" target="_blank">(ROBLOX GEARSHIFT 커뮤니티 바로가기)</a>   </li> 
+                <li>조민준 네이버 블로그 바로가기: <a href="https://blog.naver.com/gearshifty" target="_blank">
+                <img src="https://jwiki.kr/wiki/images/b/bb/%EB%84%A4%EC%9D%B4%EB%B2%84_%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%95%84%EC%9D%B4%EC%BD%98.svg" alt ="네이버 블로그 바로가기"width="100"> 
+                </a> </li>
+        </ul>
+        <hr>
+        <h2><b style="color:rgb(255, 0, 0);"> 이뻐보이는 버튼이 있습니다. 누르고 싶지 않나요?</b></h2>
+        <input type="button" value="이쁜 버튼 뀨?" onclick='alert("바보 그걸 누르다니 ㅋㅋ ㅉㅉ")'/>
+        <hr>
+        <label for="조민준">조민준은 당신에게 어떤 사람입니까? </label>
 
+        <select id="personality">
+        <option value="">다음중 골라주세요.</option>
+        <option value="sexy">섹시</option>
+        <option value="handsome">존잘</option>
+        <option value="cutie">큐티</option>
+        </select>
+        <br>
+        <hr>
+        <h2>CSS를 적용하는 세 가지 방법</h2>
+        <p>
+                <b style="color: tomato;"> 조민준 짱짱맨(inline style)</b>
+        </p>
+        <p>
+                <b class="style-1">조민준 짱짱맨(internal style sheet)</b>
+        </p>
+        <p>
+                <b class="style-2">조민준 천재(linking style sheet)</b>
+        </p>
 
-
-
+        <table>
+                <tr>
+                        <th>이름</th>
+                        <th>나이</th>
+                </tr>
+                <tr>
+                        <td>조민준</td>
+                        <td>23</td>
+                </tr>
+        </table>
 
 
 
 </body>
+
+<!-- 주석 주서먹기  -->
+
 </html>
