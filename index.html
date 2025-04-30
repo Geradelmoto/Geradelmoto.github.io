@@ -1,73 +1,97 @@
-
-
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lock Screen</title>
-    <script>
-        let isUnlocked = false;
-        let startX = 0;
-        let currentX = 0;
-        let threshold = 150; // slide unlock threshold
-
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').innerText = `${hours}:${minutes}`;
+    <title>Gearshift</title>
+    <style>
+        body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #ffeb3b; /* 네 배경처럼 노란색 */
         }
-
-        function handleTouchStart(event) {
-            if (isUnlocked) return;
-            startX = event.touches[0].clientX;
+    
+        /* 상단 메뉴바 */
+        header {
+        background-color: #f44336; /* 빨간색 배경 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-
-        function handleTouchMove(event) {
-            if (isUnlocked) return;
-            currentX = event.touches[0].clientX;
-            const deltaX = currentX - startX;
-            const slider = document.getElementById('slider');
-            if (deltaX > 0) {
-                slider.style.transform = `translateX(${deltaX}px)`;
-            }
+    
+        /* 메뉴 링크들 */
+        nav {
+        display: flex;
+        gap: 30px;
         }
-
-        function handleTouchEnd(event) {
-            if (isUnlocked) return;
-            const deltaX = currentX - startX;
-            if (deltaX > threshold) {
-                unlockScreen();
-            } else {
-                document.getElementById('slider').style.transform = `translateX(0px)`;
-            }
+    
+        nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
         }
-
-        function unlockScreen() {
-            isUnlocked = true;
-            document.getElementById('lockscreen').classList.add('hidden');
-            document.getElementById('welcome').classList.remove('hidden');
+    
+        nav a:hover {
+        text-decoration: underline;
+        text-decoration-color: white;
+        
         }
-
-        setInterval(updateClock, 1000);
-        window.onload = updateClock;
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+        /* 페이지 본문 아래로 띄우기 */
+        .content {
+        padding-top: 80px;         /* 헤더와 거리 확보 */
+        margin-left: 60px;         /* 왼쪽으로 이동 */
+        max-width: 800px;          /* 너무 넓지 않게 */
+        text-align: left;          /* 왼쪽 정렬 */
+        background: none;
+        padding-bottom: 40px;
+        }
+    </style>
+    
 </head>
-<body class="bg-black text-white flex items-center justify-center min-h-screen overflow-hidden">
-    <div id="lockscreen" class="absolute inset-0 bg-black flex flex-col items-center justify-center">
-        <div id="clock" class="text-6xl font-bold mb-20"></div>
-        <div id="slider" class="w-64 h-16 bg-gray-700 rounded-full flex items-center justify-center text-lg" 
-            ontouchstart="handleTouchStart(event)" 
-            ontouchmove="handleTouchMove(event)" 
-            ontouchend="handleTouchEnd(event)">
-            ➡️ Slide to Unlock
-        </div>
-    </div>
 
-    <div id="welcome" class="hidden flex items-center justify-center w-full h-full text-4xl font-bold">
-        만나서 반갑습니다
-    </div>
+
+
+
+
+
+<body>
+    <header>
+        <nav>
+        <a href="index.html">홈</a>
+        <a href="update.html">게시판</a>
+
+        <a href="contact.html">문의</a>
+        </nav>
+    </header>
+    
+    <div class="content">
+    
+
+    <h1>GEARSHIFT</h1>
+    <p>My name is Minjun.</p>
+
+    <details>
+        <summary> Read More</summary>
+        <p>
+        조민준의 GearShift는 지금껏 아무것도 하지 않았습니다. But from now on, We started our project we
+        thought all the time before today. 
+        Let's Fucking go foward
+        <b>I'm free to do whatever i want! </b>
+        </p>
+
 </body>
+
+
+
+
+
 </html>
