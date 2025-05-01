@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    .star {
+        position: absolute;
+        font-size: 300px;
+        color: crimson;
+        pointer-events: none;
+        animation: pop 0.3s ease-out;
+        }
 
+        @keyframes pop {
+        0% {
+        transform: scale(0);
+        opacity: 0;
+        }
+        100% {
+        transform: scale(1);
+        opacity: 1;
+        }}
+
+        progress {
+         -webkit-appearance: none; /* 크롬/사파리용 초기화 */
+        appearance: none;
+        width: 300px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #eee;
+        border: none;
+        overflow: hidden;
+        }
+
+        progress::-webkit-progress-bar {
+        background-color: #eee;
+        }
+
+        progress::-webkit-progress-value {
+        background-color: #3A466B;  /* 진행 중인 부분 색 */
+        border-radius: 10px;
+        }
+    </style>
 
 
 
@@ -12,6 +50,36 @@
 
 </head>
 <body>
+
+    <script>
+        document.addEventListener("click", function (e) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.textContent = "⭐";
+    
+        // 클릭 위치에 별 배치
+        star.style.left = `${e.clientX}px`;
+        star.style.top = `${e.clientY}px`;
+    
+        document.body.appendChild(star);
+    
+        // 5초 후 삭제
+        setTimeout(() => {
+        star.remove();
+        }, 5000);
+        });
+    </script>
+
+<hr style="height: 3px; border:none; border-top: dotted; border-color: black;" >
+<div>
+    자기 발전의 진행도
+    <div>
+        <progress id="progressBar" max="100" value="11" class="progress"></progress>
+    
+    </div>
+</div>
+
+
     <header>
         <nav>
             <ul>
