@@ -5,12 +5,11 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Update</title>
+<title>Updates</title>
 <style>
     body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #ffeb3b; /* 네 배경처럼 노란색 */
+    margin 0;
+    font-family: Arial, Helvetica, sans-serif;
     }
 
     /* 상단 메뉴바 */
@@ -27,72 +26,85 @@
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-
-    /* 메뉴 링크들 */
-    nav {
-    display: flex;
-    gap: 30px;
-    }
-
-    nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    }
-
-    nav a:hover {
-    text-decoration: underline;
-    text-decoration-color: white;
     
-    }
-
-    /* 페이지 본문 아래로 띄우기 */
     .content {
-    padding-top: 80px;         /* 헤더와 거리 확보 */
-    margin-left: 60px;          /*왼쪽으로 이동 */
-    max-width: 800px;          /* 너무 넓지 않게 */
-    text-align: left;          /* 왼쪽 정렬 */
-    background: none;
+    padding-top: 80px;  
+    padding-bottom: 40px;                
+    
+    text-align: left;          /
     padding-bottom: 40px;
+    background-color: #ffeb3b;
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
     }
-
-
-    #box1 {
-    border-style : solid;
-    border-color: magenta;
-    }
-
 
     .board {
-    background: white;
+    background-color: #3A466B;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border-style : solid;
+    border-color: #3A466B;
+    background-color: #3A466B;
+    max-width: 600px;
+    min-width: 599px;
+    }
 
+    .inbox {
+    background-color: white; 
+    color: black; 
+    padding: 15px;
+    margin-top: 10px; 
+    border-radius: 5px;
+    }
 
+    .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3A466B;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
     }
 </style>
-
-
-
-
-
-
 </head>
 
-<body class="content">
+
+<body style="background-color: #ffeb3b; margin-left: 60px;" >
 <header>Update News</header>
 
-<div id="box1">
-<article> 
-    <h1 >I made my first website.</h1>
+<div class="content">
+    <div class="board">
+        <h1>2025/05/01</h1>
+        <div class="inbox"> 안녕하십니까 저는 조민준입니다. 
+            <br>오늘은 5월 1일이고 오늘부로 제 포트폴리오인 Gearshift 사이트를 만들었습니다. 
+            <br>사실 큰 웹사이트를 노리고 만든건 아니고 작은 블로그 이용하겠지만, 계속 제 공부와 작업을 올릴려고 합니다. 
+            <br>많은 관심 바랍니다. 
+        </div>
+    </div>
 
-
-</article>
+    <div class="board">
+        <h1>2025/05/01 2 이도현은 살아있다.</h1>
+        <div class="inbox">
+        제가 아무리 이도현과 잘 지낼지라도,
+        <br>이도현은 살아있다.
+        </div>
+    </div>
 </div>
 
 
 
 
-<a href="index.html">← 돌아가기</a>
+
+<div>
+    <a href="index.html" class="back-button">
+    ← 돌아가기</a>
+</div>
+
+
+
+
 </body>
 
 
