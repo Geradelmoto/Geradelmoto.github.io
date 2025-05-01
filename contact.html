@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact</title>
+        <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #F7AD45;
+        }
+        /* 헤더 영역 */
+        header {
+        background-color: #BB3E00;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 24px;
+        border-radius: 0 0 60px 60px;
+        }
+        /* 전체 페이지 레이아웃 */
+        .container {
+        display: flex;
+        padding: 40px 60px;
+        gap: 40px;
+        }
+
+        /* 프로필 박스 */
+        .profile {
+        width: 250px;
+        height: 300px;
+        background-color: #ddd;
+        border: 10px solid #657C6A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        overflow: hidden;  
+        }
+
+        .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;          /* 박스 꽉 채우고 비율 유지하며 자르기 */
+        display: block;
+        }
+
+
+        /* 연락처 박스 */
+        .contact {
+        flex: 1;
+        border: 10px solid #657C6A;
+        background-color: #657C6A;
+        color: white;
+        padding: 20px;
+        text-align: left;
+        }
+
+        .contact h2 {
+        margin-top: 0;
+        }
+
+        
+        </style>
+    </head>
+
+    <body>
+
+    <header>연락처</header>
+    
+    <div class="container">
+        <div class="profile">
+        <img src="images/Minjun.jpg" alt="조민준 사진">
+        </div>
+        
+        <div class="contact">
+        <address>
+        웹사이트 주소 : <a href ="https://geradelmoto.github.io">조민준 포트폴리오 Gearshift</a> <br>
+        네이버 블로그 주소: <a href ="https://blog.naver.com/gearshifty">조민준의 블로그</a> <br>
+        오피스: 경기도 수원시 영통구 영통동 <br>
+        전화 <a href="tel:010-2071-0362">010-2071-0362</a><br>
+        이메일: <a href="jmjun03@naver.com">jmjun03@naver.com</a>
+        </address>
+        </div>
+    </div>
+
+
+
+    <div>
+        <a href="index.html" style="display: inline-block;
+        padding: 10px 20px;
+        background-color: #657C6A;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px; margin-left: 60px;">
+        ← 돌아가기</a>
+    </div>
+    
+    </body>
+    </html>
