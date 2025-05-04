@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery of Minjun</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding&display=swap');
+    .wfont {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    }
+    body
+    {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #F9D949;
+    overflow-x: hidden;
+    }
+
+    header {
+    background-color: #F45050; 
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 2;
+    color: #F0F0F0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 20px;
+    }
+
+    .photo {
+        transition: transform 0.4s, opacity 0.4s;
+        width: 200px;
+        height: 400px;
+        opacity: 0.5;
+        transform: scale(0.7);
+        cursor: pointer;
+        border: 6px solid;
+        border-color: #3C486B;
+    }
+
+    .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .photo.active {
+        width: 300px;
+        height: 500px;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .nav-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    .nav-buttons button {
+        background: rgba(60, 72, 107, 0.5);
+        color: #F0F0F0;
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        pointer-events: all;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #3C486B;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .modal img {
+        max-width: 70%;
+        max-height: 70%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        border-width: 6px;
+        border-color: #3C486B;
+        box-shadow: 0 0 20px black;
+    }
+
+    .modal .desc {
+        margin-top: 15px;
+        color: #F0F0F0;
+        font-size: 1.2rem;
+        text-align: center;
+        
+    }
+
+    .modal .close {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        font-size: 2rem;
+        color: #F0F0F0;
+        cursor: pointer;
+    }
+
+    .modal .close:hover {
+        color: #F45050;
+    }
+
+    .back-button {
+    left: 20px;
+    padding: 8px 16px;
+    background-color: #3C486B;
+    color: #F0F0F0;
+    text-decoration: dashed;
+    text-decoration-color: #F0F0F0;
+    border-radius: 5px;
+    }
+
+    </style>
+</head>
+
+
+
+<body class="wfont">
+
+    <div class ="nav-buttons">
+        <button onclick="prevSlide()"><b>←</b></button>
+        <button onclick="nextSlide()">→</button>
+    </div>
+
+    <header>
+        <h1><b>Gallery of Minjun</b></h1>
+    </header>
+
+    <div class="carousel" id="carousel">
+        <div class="photo" data-desc="뜨거울 때 꽃이 핀다."><img src="images/legend1.jpg" alt="뜨거울 때 꽃이 핀다."></div>
+        <div class="photo" data-desc="셰퍼드 페어리 전시회에서..."><img src="images/legend2.jpg" alt="Obey"></div>
+        <div class="photo" data-desc="행동 하라"><img src="images/legend3.jpg" alt="행동하라"></div>
+        <div class="photo" data-desc="구상과 추상 사이"><img src="images/legend4.jpg" alt="Between."></div>
+        <div class="photo" data-desc="Timetable"><img src="images/legend5.jpg" alt="Daft"></div>
+        <div class="photo" data-desc="Tokyo"><img src="images/legend6.png" alt="Army Kill Bomb Baby"></div>
+        <div class="photo" data-desc="사지 못해 아쉬운.."><img src="images/legend7.jpg" alt="Lego megazine"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="close" onclick="closeModal()">x</div>
+        <img id="modalImg" src="" alt="큰 사진">
+        <div class="desc" id="modalDesc"></div>
+    </div>
+
+
+
+    <script>
+        const photos = document.querySelectorAll('.photo');
+        let current = 2;
+
+        function updateGallery() {
+            photos.forEach((photo, index) => {
+            photo.classList.remove('active');
+            if (index === current) {
+                photo.classList.add('active');
+            }
+            });
+        }
+
+        function nextSlide() {
+            current = (current + 1) % photos.length;
+            updateGallery();
+        }
+
+        function prevSlide() {
+            current = (current - 1 + photos.length) % photos.length;
+            updateGallery();
+        }
+
+        // 사진 클릭 → 모달 열기
+        photos.forEach(photo => {
+            photo.addEventListener('click', () => {
+            const imgSrc = photo.querySelector('img').src;
+            const desc = photo.dataset.desc;
+
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+            });
+        });
+
+        // 모달 닫기
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // ESC 키 눌러서 모달 닫기
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+
+        window.addEventListener('DOMContentLoaded', () => {
+        const photos = document.querySelectorAll('.photo');
+        const centerIndex = Math.floor(photos.length / 2);
+        photos[centerIndex].classList.add('active');
+        });
+    </script>
+
+    <div>
+        <a href="index.html" style="display: inline-block;
+        padding: 10px 20px;position: absolute;
+        background-color: #3C486B;
+        color: #F0F0F0;
+        text-decoration: none;
+        border-radius: 5px; margin-left: 60px; bottom: 50px;">
+        <b>← 돌아가기</b></a>
+    </div>
+
+    <div style="display: inline-block;
+    padding: 10px 20px;position: absolute;
+    background: none;
+    color: #3C486B;
+    text-decoration: none;
+    border-radius: 5px; bottom: 50px; left:40%"><b>※사진을 누르시면 확대가 가능합니다.※</b>
+    </div>
+
+</body>
+</html>

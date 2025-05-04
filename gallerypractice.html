@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>커버플로우 갤러리 + 확대기능</title>
+<style>
+    body {
+
+    }
+
+    .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    }
+
+
+
+    .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+
+
+    .nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    }
+
+    .nav-buttons button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    }
+
+
+
+
+
+
+    .modal .desc {
+    margin-top: 15px;
+    color: white;
+    font-size: 1.2rem;
+    }
+
+    .modal .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    }
+
+    .modal .close:hover {
+    color: crimson;
+    }
+</style>
+</head>
+<body>
+
+<!-- 좌우 버튼 -->
+<div class="nav-buttons">
+    <button onclick="prevSlide()">←</button>
+    <button onclick="nextSlide()">→</button>
+</div>
+
+<!-- 캐러셀 -->
+<div class="carousel" id="carousel">
+    <!-- 각 사진은 data-desc 속성으로 설명을 가짐 -->
+    <div class="photo" data-desc="일본 여행의 유일한 손실"><img src="images/legend1.jpg" alt="파괴수 최성원"></div>
+    <div class="photo" data-desc="차은우는 사실 TEMU 이도현이다."><img src="images/legend2.jpg" alt="TEMU 차은우"></div>
+    <div class="photo active" data-desc="세 번째 사진 설명입니다."><img src="https://picsum.photos/id/1016/300/400" alt=""></div>
+    <div class="photo" data-desc="네 번째 사진 설명입니다."><img src="https://picsum.photos/id/1018/300/400" alt=""></div>
+    <div class="photo" data-desc="다섯 번째 사진 설명입니다."><img src="https://picsum.photos/id/1020/300/400" alt=""></div>
+</div>
+
+<!-- 모달 -->
+<div class="modal" id="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImg" src="" alt="">
+    <div class="desc" id="modalDesc"></div>
+</div>
+
+<script>
+    const photos = document.querySelectorAll('.photo');
+    let current = 2;
+
+    function updateGallery() {
+    photos.forEach((photo, index) => {
+        photo.classList.remove('active');
+        if (index === current) {
+        photo.classList.add('active');
+    }
+    });
+    }
+
+    function nextSlide() {
+    current = (current + 1) % photos.length;
+    updateGallery();
+    }
+
+    function prevSlide() {
+    current = (current - 1 + photos.length) % photos.length;
+    updateGallery();
+    }
+
+    // 모달 열기
+    photos.forEach(photo => {
+    photo.addEventListener('click', () => {
+        const imgSrc = photo.querySelector('img').src;
+        const desc = photo.dataset.desc;
+        document.getElementById('modalImg').src = imgSrc;
+        document.getElementById('modalDesc').innerText = desc;
+        document.getElementById('modal').style.display = 'flex';
+    });
+    });
+
+    // 모달 닫기
+    function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    }
+
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+    });
+</script>
+
+</body>
+</html>

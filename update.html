@@ -7,13 +7,25 @@
 <meta charset="UTF-8">
 <title>Updates</title>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding&display=swap');
+
+
+    .wfont {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    }
+
+
     body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     }
 
     header {
-    background-color: #f44336; 
+    background-color: #F45050;
+    color: #F0F0F0;
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +42,7 @@
     padding-top: 80px;  
     text-align: left;
     padding-bottom: 20px;
-    background-color: #ffeb3b;
+    background-color: #F9D949;
     display: flex;
     justify-content: flex-start;
     gap: 30px;
@@ -38,13 +50,12 @@
     }
 
     .board {
-    background-color: #3A466B;
-    color: white;
+    background-color: #3C486B;
+    color: #F0F0F0;
     padding: 20px;
     border-radius: 8px;
     border-style : solid;
-    border-color: #3A466B;
-    background-color: #3A466B;
+    border-color: #3C486B;
     width: 400;
     display: flex;
     flex-direction: column;
@@ -58,7 +69,7 @@
 
 
     .inbox {
-    background-color: white; 
+    background-color: #F0F0F0; 
     color: black; 
     padding: 15px;
     margin-top: 10px; 
@@ -70,8 +81,8 @@
     .image {
     width: 250px;
     height: 300px;
-    background-color: #ddd;
-    border: 10px solid #657C6A;
+    background-color: #F0F0F0;
+    border: 10px solid #3C486B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,8 +101,8 @@
     .back-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3A466B;
-    color: white;
+    background-color: #3C486B;
+    color: #F0F0F0;
     text-decoration: none;
     border-radius: 5px;
     }
@@ -108,7 +119,7 @@
 </head>
 
 
-<body style="background-color: #ffeb3b; margin-left: 60px;" >
+<body style="background-color: #F9D949; margin-left: 60px;" class="wfont" >
 <header><h1><b>Update News</b></h1></header>
 
 <div class="content">
@@ -146,13 +157,17 @@
             <br> 게시판 분할
         </div>
     </div>
+    <div class="board">
+        <h1>2025/05/04</h1>
+        <div class="inbox"> 색 통일, 갤러리 페이지 개발</div>
+    </div>
 </div>
 
 
 
 <div>
     <a href="index.html" class="back-button">
-    ← 돌아가기</a>
+    <b>← 돌아가기</b></a>
 </div>
 
 

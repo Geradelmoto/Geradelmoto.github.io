@@ -4,6 +4,16 @@
         <meta charset="UTF-8">
         <title>Contact</title>
         <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding&display=swap');
+    .wfont {
+        font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    }
+
+
+
         * {
         box-sizing: border-box;
         }
@@ -11,17 +21,26 @@
         body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #F7AD45;
+        background-color: #F9D949;
         }
         /* 헤더 영역 */
+
         header {
-        background-color: #BB3E00;
-        color: white;
-        text-align: center;
-        padding: 30px 0;
-        font-size: 24px;
-        border-radius: 0 0 60px 60px;
+        background-color: #F45050; 
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        gap: 2;
+        color: #F0F0F0;
         }
+
         /* 전체 페이지 레이아웃 */
         .container {
         display: flex;
@@ -33,8 +52,8 @@
         .profile {
         width: 250px;
         height: 300px;
-        background-color: #ddd;
-        border: 10px solid #657C6A;
+        background-color: #F0F0F0;
+        border: 10px solid #3C486B;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,9 +72,9 @@
         /* 연락처 박스 */
         .contact {
         flex: 1;
-        border: 10px solid #657C6A;
-        background-color: #657C6A;
-        color: white;
+        border: 10px solid #3C486B;
+        background-color: #F0F0F0;
+        color: #3C486B;
         font-size: 30px;
         padding: 20px;
         text-align: left;
@@ -77,9 +96,8 @@
         </style>
     </head>
 
-    <body>
-
-    <header>연락처</header>
+    <body class="wfont">
+    <header class="wfont"><h1><b>Contacts</b></h1></header>
     
     <div class="container">
         <div class="profile">
@@ -88,11 +106,11 @@
         
         <div class="contact">
         <address class="cal-sans-regular">
-        Home page : <a href ="https://geradelmoto.github.io">조민준 포트폴리오 Gearshift</a> <br>
-        Naver blog address: <a href ="https://blog.naver.com/gearshifty">조민준의 블로그</a> <br>
-        Office: 경기도 수원시 영통구 영통동 <br>
-        Tel: <a href="tel:010-2071-0362">010-2071-0362</a><br>
-        E-mail: <a href="jmjun03@naver.com">jmjun03@naver.com</a>
+        <b>Home page :</b> <a href ="https://geradelmoto.github.io">Portfolio of Minjun, Gearshift</a> <br>
+        <b>Naver blog address:</b> <a href ="https://blog.naver.com/gearshifty">Palletes</a> <br>
+        <b>Office:</b> 경기도 수원시 영통구 영통동 <br>
+        <b>Tel:</b> <a href="tel:010-2071-0362">010-2071-0362</a><br>
+        <b>E-mail:</b> <a href="jmjun03@naver.com">jmjun03@naver.com</a>
         </address>
         </div>
     </div>
@@ -102,11 +120,11 @@
     <div>
         <a href="index.html" style="display: inline-block;
         padding: 10px 20px;
-        background-color: #657C6A;
-        color: white;
+        background-color: #3C486B;
+        color: #F0F0F0;
         text-decoration: none;
         border-radius: 5px; margin-left: 60px;">
-        ← 돌아가기</a>
+        <b>← 돌아가기</b></a>
     </div>
     
     </body>

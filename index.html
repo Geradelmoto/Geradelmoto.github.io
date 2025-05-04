@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gearshift</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding&display=swap');
+        .wfont {
+        font-family: "DM Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        }
+
+
+
         body {
         margin: 0;
         font-family: sans-serif;
-        background-color: #F7AD45; 
+        background-color: #F9D949; 
         }
     
 
         header {
-        background-color: #BB3E00; 
+        background-color: #F45050; 
+        color: #F0F0F0;
         position: fixed;
         top: 0;
         left: 0;
@@ -34,7 +45,7 @@
         }
     
         nav a {
-        color: white;
+        color: #F0F0F0;
         text-decoration: none;
         font-weight: bold;
         font-size: 18px;
@@ -42,7 +53,7 @@
     
         nav a:hover {
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: 000000;
         
         }
 
@@ -55,7 +66,7 @@
         }
         body {
         margin: 0;
-        background-color: #f7e537;
+        background-color: #F9D949;
         font-family: sans-serif;
         }
 
@@ -70,10 +81,11 @@
         }
 
         .box {
-        border: 10px solid #657C6A;
+        border: 10px solid #3C486B;
         padding: 20px;
-        background-color: #f7e537;
+        background-color: #3C486B;
         font-size: 18px;
+        color: #F0F0F0;
         }
 
         #box1 {
@@ -83,13 +95,23 @@
         #box2 {
         grid-column: 2;
         grid-row: 1;
+        border-color: #3C486B;
+        background-color: #F9D949;
+        color: #3C486B;
         }
 
         #box3 {
         grid-column: 2;
         grid-row: 2;
+        border-color: #3C486B;
+        background-color: #F9D949;
+        color: #3C486B;
         }
 
+        .toupdate {
+        font-size: 10px;
+        color: #F0F0F0;
+        }
     </style>
     
 </head>
@@ -99,44 +121,50 @@
 
 
 
-<body>
+<body class="wfont">
     
-    <header>
+    <header class="wfont">
         <nav>
-        <a href="index.html">홈</a>
-        <a href="update.html">게시판</a>
-        <a href="contact.html">연락처</a>
+        <a href="index.html">Home</a>
+        <a href="update.html">Bulletin</a>
+        <a href="contact.html">Contacts</a>
+        <a href="Gallery2.html">Gallery</a>
         </nav>
     </header>
 
     
     <div class="content">
-        <h1 style="font-size: 100px;">GEARSHIFT</h1>
-        <p>조민준의 홈페이지에 오신 것을 환영합니다.</p>
+        <h1 style="font-size: 100px; color: #3C486B;">GEARSHIFT</h1>
+        <p style="color: #3C486B;">Welcome to Jo Minjun's Gallery.
+        <br>This is a small space where I capture and share moments from my life — through photos, thoughts, and works
+        <br>Take your time and enjoy exploring.</p>
     </div>
 
 
 
     <div class="container">
         <div class="box" id="box1">
-            <details>
-            <summary>About this page...</summary>
+            <p><h2>▷ About this page...</h2></p>
             <p>
-            조민준의 GearShift는 조민준의 포트폴리오입니다. <br>
-            현재도 계속 개발중이며, 독학이기 때문에 조잡해 보여도 열심히 개발하고 있습니다.<br>
-            <b>I'm free to do whatever i want! </b>
+            This gallery page is a personal space where I share fragments of my life through images and stories.<br>
+            It reflects not only who I am now, but also <b style="text-decoration: dashed; text-decoration-color: #F0F0F0;">who I’m becoming as I continue to grow and create.</b><br>
+            The page is still under active development, so you may notice changes and improvements along the way.<br>
+            New features, designs, and content will be added step by step. <br>
+            Thank you for visiting, and I hope you’ll enjoy watching this space evolve over time.<br>
+            <h3><b>I'm free to do whatever i want! </b></h3>
             </p>
+            <details>
+                <summary>숨기는 말</summary>
+            <p>조잡해보여도, 계속 공부하며 발전시켜 나가겠습니다.</p>
             </details>
         </div>
 
 
 
+
         <div class="box" id="box2">
-            <h3>Recent Posts</h3>
-            <ul>
-            <li>Post 1</li>
-            <li>Post 2</li>
-            </ul> 
+            <div style="text-decoration: underline 3px; text-decoration-color: #3C486B; ;"><h2>★ Improvements ★</h2></div>
+            <div><a href="Gallery2.html" alt="클릭하여 넘어가기.">▷ 2025/05/04 Gallery page Update</a></div>
         </div>
 
         <div class="box" id="box3">
@@ -147,20 +175,6 @@
 
     </div>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
